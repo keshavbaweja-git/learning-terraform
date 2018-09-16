@@ -34,4 +34,34 @@ resource "aws_security_group" "learning-tf-securitygroup" {
     to_port   = 80
     protocol  = "tcp"
   }
+
+  ingress {
+    cidr_blocks = [
+      "42.60.110.35/32",
+    ]
+
+    from_port = 22
+    to_port   = 22
+    protocol  = "tcp"
+  }
+
+}
+
+
+resource "aws_default_route_table" "r" {
+  default_route_table_id = "${aws_vpc.learning-tf-vpc.default_route_table_id}"
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = "${aws_internet_gateway.learning_tf_igw.id}"
+  }
+
+  tags {
+    Name = "default table"
+  }
+}
+
+
+resource "aws_internet_gateway" "learning_tf_igw" {
+  vpc_id = "${aws_vpc.learning-tf-vpc.id}"
 }

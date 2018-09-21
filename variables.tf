@@ -2,7 +2,7 @@ variable "zones" {
   type = "map"
 
   default = {
-    "learning-tf-subnet1" = "ap-southeast-1a"
+    "learn_tf_subnet1_pub" = "ap-southeast-1a"
   }
 }
 

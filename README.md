@@ -31,6 +31,7 @@ For points 1. and 2. above, please refer to [instructions here](https://docs.aws
 ## Running the project
 After you have cloned the repository on your machine, run the commands below
 ```
+cd learn_vpc
 terraform init # this initializes Terraform by downloading AWS provider plugins
 terraform apply # analyses the configuration files and applies the changes to AWS infrastrucuture
 ```

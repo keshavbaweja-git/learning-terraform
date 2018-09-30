@@ -1,4 +1,4 @@
-variable "zones" {
+variable "subnet_zones" {
   type = "map"
 
   default = {
@@ -13,4 +13,15 @@ variable "my_ip" {
 
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
+}
+
+variable "instance_attributes" {
+  type = "map"
+
+  default = {
+    type = "t2.micro"
+    ami = "ami-08569b978cc4dfa10"
+    key_pair = "kp_1"
+  }
+
 }
